@@ -1,17 +1,42 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./styles.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+function App() {
+  return (
+    <div className="card">
+      <Avatar />
+      <div className="data">
+        <Intro />
+
+        <SkillList />
+      </div>
+    </div>
+  );
+}
+function Avatar() {
+  return <img className="avatar" src="photo-computer.jpg" alt="cars" />;
+}
+
+function Intro() {
+  return (
+    <div>
+      <h1>Nikolay Yanakiev</h1>
+      <p>
+        Front-end developer. I am Mechanical engineer and teacher of mathematics
+        and informatics. I like to travel and spend time in nature.
+      </p>
+    </div>
+  );
+}
+
+function SkillList() {}
+
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
 root.render(
-  <React.StrictMode>
+  <StrictMode>
     <App />
-  </React.StrictMode>
+  </StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
